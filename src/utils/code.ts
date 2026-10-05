@@ -1,10 +1,10 @@
-export const getWeatherStatus = (code: number): string => {
+﻿export const getWeatherStatus = (code: number): string => {
   if (code === 0) {
-    return 'Trời quang';
+    return 'Trời nắng';
   }
 
   if (code === 1 || code === 2) {
-    return 'Ít mây';
+    return 'Nắng xen mây';
   }
 
   if (code === 3) {

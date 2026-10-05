@@ -1,29 +1,24 @@
-import React from 'react';
-import {StatusBar, StyleSheet, useColorScheme, View} from 'react-native';
+﻿import React from 'react';
+import {StatusBar, StyleSheet, View} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
+import {WeatherProvider} from './src/WeatherContext';
 import HomeScreen from './src/screens/HomeScreen';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <SafeAreaProvider>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-      />
-
+      <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
-        <HomeScreen />
+        <WeatherProvider>
+          <HomeScreen />
+        </WeatherProvider>
       </View>
     </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+const styles = StyleSheet.create({container: {flex: 1}});
 
 export default App;
+
