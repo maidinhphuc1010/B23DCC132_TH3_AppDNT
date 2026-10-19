@@ -1,19 +1,14 @@
 ﻿import React from 'react';
-import {StatusBar, StyleSheet, View} from 'react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-
-import {WeatherProvider} from './src/WeatherContext';
-import HomeScreen from './src/screens/HomeScreen';
+import {StatusBar, StyleSheet, Text} from 'react-native';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
 function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle="dark-content" />
-      <View style={styles.container}>
-        <WeatherProvider>
-          <HomeScreen />
-        </WeatherProvider>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <Text>Quản lý học tập</Text>
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 }
