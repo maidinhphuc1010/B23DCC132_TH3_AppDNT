@@ -1,19 +1,21 @@
 ﻿import React from 'react';
-import {StatusBar, StyleSheet, Text} from 'react-native';
-import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { RootNavigator } from './src/navigation/RootNavigator';
+import { LearningProvider } from './src/context/LearningContext';
+import { LearningGate } from './src/components/LearningGate';
 
 function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.container}>
-        <Text>Quản lý học tập</Text>
-      </SafeAreaView>
+      <LearningProvider>
+        <LearningGate>
+          <RootNavigator />
+        </LearningGate>
+      </LearningProvider>
     </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({container: {flex: 1}});
-
 export default App;
-
